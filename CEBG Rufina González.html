@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Portal Escolar — <span data-bind="nombre"></span></title>
+  <meta name="description" content="Portal del plantel educativo: historia, noticias, eventos y acceso para docentes y padres."/>
+  <link rel="icon" href="assets/img/Diseño sin título.svg"/>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <script defer src="assets/js/config.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <img src="assets/img/Diseño sin título.svg"Logo de la escuela">
+        <div class="brand">
+          <strong data-bind="nombre">Nombre de la Escuela</strong>
+          <span data-bind="lema">Lema institucional</span>
+        </div>
+      </div>
+      <button id="menuBtn" class="menu-btn" aria-label="Abrir menú">Menú</button>
+      <nav aria-label="Principal">
+        <a class="nav-link" href="#inicio">Inicio</a>
+        <a class="nav-link" href="#historia">Historia</a>
+        <a class="nav-link" href="#servicios">Oferta</a>
+        <a class="nav-link" href="#noticias">Noticias</a>
+        <a class="nav-link" href="#calendario">Calendario</a>
+        <a class="nav-link" href="#portal">Portal</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1><span data-bind="nombre">Nombre de la Escuela</span></h1>
+        <p>Bienvenidos al portal institucional de educación primaria. Atención a estudiantes desde <strong>Prekínder</strong> hasta <strong>6°</strong>, con salones <strong>multigrado</strong>.</p>
+        <div class="cta">
+          <span class="badge">Prekínder–Sexto grado</span>
+          <span class="badge">Multigrado</span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="#portal">Ir al Portal</a>
+          <a class="btn" href="#historia">Conocer la historia</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Datos del Plantel</h3>
+        <div class="grid cols-2">
+          <div class="card fundacion">
+            <h3>Año de Fundación</h3>
+            <p>1964</p>
+          </div>
+          <div class="card">
+            <strong>Ubicación</strong>
+            <div class="card mapa">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.388615581658!2d-79.8387512!3d8.6582526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fab5db3e8c397e5%3A0x3c11eae34a087a08!2sCabuya%2C%20Chame%2C%20Panam%C3%A1!5e0!3m2!1ses-419!2spa!4v1631577916712!5m2!1ses-419!2spa"></iframe>
+            </div>
+        <div class="grid cols-2" style="margin-top:12px">
+          <div class="card">
+            <strong>Niveles</strong>
+            <div class="meta" id="nivelesTxt">Prekínder a Sexto Grado</div>
+          </div>
+          <div class="card">
+            <strong>Modelo de aula</strong>
+            <div class="meta" id="modeloTxt">Multigrado</div>
+          </div>
+        </div>
+        <div class="card" style="margin-top:12px">
+          <img src="assets/img/fachada-01.webp" alt="Fachada del plantel" style="width:100%;border-radius:12px">
+        </div>
+        <p class="meta" style="margin-top:10px">Portal demostrativo — todo funciona en el navegador.</p>
+      </div>
+    </section>
+
+    <section id="historia">
+      <h2 class="section-title">Nuestra Historia</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <p>Fundada en 1964, <strong><span data-bind="nombre">la Escuela</span></strong> nació con el propósito de formar ciudadanos íntegros y comprometidos con su comunidad. A lo largo de las décadas, el plantel ha ampliado su infraestructura, incorporado laboratorios de ciencias y tecnología, y fortalecido su propuesta académica y humana.</p>
+          <p>Entre los hitos más relevantes destacan la apertura del programa de <em>robótica educativa</em> (2015), la creación de la <em>banda estudiantil</em> (2010), y la acreditación de la <em>biblioteca digital</em> (2021).</p>
+        </article>
+        <aside class="card">
+          <h4>Hitos</h4>
+          <ul class="meta">
+            <li>1964 — Fundación del plantel</li>
+            <li>2010 — Banda estudiantil</li>
+            <li>2015 — Programa de huerto escolar</li>
+            <li>2021 — Biblioteca</li>
+          </ul>
+          <div class="accordion" style="margin-top:12px">
+            <div class="accordion-item">
+              <div class="acc-head"><strong>Misión</strong><span>+</span></div>
+              <div class="acc-body">Brindar una educación integral, inclusiva y de excelencia, centrada en el estudiante.</div>
+            </div>
+            <div class="accordion-item" style="margin-top:8px">
+              <div class="acc-head"><strong>Visión</strong><span>+</span></div>
+              <div class="acc-body">Ser referente regional en innovación educativa con impacto social.</div>
+            </div>
+            <div class="accordion-item" style="margin-top:8px">
+              <div class="acc-head"><strong>Valores</strong><span>+</span></div>
+              <div class="acc-body">Respeto, responsabilidad, solidaridad, honestidad y excelencia.</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <h2 class="section-title">Oferta Educativa y Servicios</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <strong>Preescolar</strong>
+          <p class="meta">Metodologías activas, aprendizaje basado en proyectos.</p>
+        </div>
+        <div class="card">
+          <strong>Primaria Completa</strong>
+          <p class="meta">Ciencias, Matemática, Español, etc</p>
+        </div>
+        <div class="card">
+          <strong>Servicios Complementarios</strong>
+          <p class="meta">Psicopedagogía, tutorías, biblioteca digital y deportes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="noticias" class="noticias">
+      <h2 class="section-title">Noticias recientes</h2>
+      <div id="noticiasWrap" class="grid cols-3"></div>
+    </section>
+
+    <section id="calendario">
+      <h2 class="section-title">Calendario de Eventos</h2>
+      <div id="eventosWrap" class="grid cols-3"></div>
+    </section>
+
+    <section id="vida-escolar">
+      <h2 class="section-title">Vida Escolar</h2>
+      <div class="gallery">
+        <figure class="span-6">
+          <img src="assets/img/aula-lectura-01.png" alt="Estudiantes en lectura guiada en el aula">
+        </figure>
+        <figure class="span-6">
+          <img src="assets/img/473082026_1754507755340843_2023481412738193735_n.jpg" alt="Estudiantes realizando actividades en clase">
+        </figure>
+        <figure class="span-8">
+          <img src="assets/img/480326864_1780767126048239_2628031786772818888_n.jpg" alt="Presentación de banda escolar">
+        </figure>
+        <figure class="span-4">
+          <img src="assets/img/fachada-01.webp" alt="Fachada y áreas verdes del plantel">
+        </figure>
+      </div>
+      <p class="meta" style="margin-top:10px">Agrega más imágenes copiándolas a <code>assets/img/</code> y duplicando los bloques <code>&lt;figure&gt;</code>.</p>
+    </section>
+
+    <section id="portal">
+      <h2 class="section-title">Portal de Acceso</h2>
+      <p class="meta">Acceso demostrativo en navegador (sin base de datos). Puede conectarse a su SSO o sistema de notas.</p>
+      <div class="portal-grid">
+        <div class="card portal-card">
+          <h4>Docentes</h4>
+          <form id="formDocentes" class="form" autocomplete="off">
+            <div id="msgDoc" class="alert" aria-live="polite">Ingrese sus credenciales de demostración.</div>
+            <div class="form-row">
+              <input class="input" name="usuario" placeholder="Usuario (docente)" required/>
+              <input class="input" name="clave" type="password" placeholder="Clave (1234)" required/>
+            </div>
+            <button class="btn primary" type="submit">Entrar</button>
+          </form>
+          <p class="meta">Demo: usuario <strong>docente</strong> / clave <strong>1234</strong>.</p>
+        </div>
+        <div class="card portal-card">
+          <h4>Padres de Familia</h4>
+          <form id="formPadres" class="form" autocomplete="off">
+            <div id="msgPad" class="alert" aria-live="polite">Ingrese sus credenciales de demostración.</div>
+            <div class="form-row">
+              <input class="input" name="usuario" placeholder="Usuario (padre)" required/>
+              <input class="input" name="clave" type="password" placeholder="Clave (1234)" required/>
+            </div>
+            <button class="btn primary" type="submit">Entrar</button>
+          </form>
+          <p class="meta">Demo: usuario <strong>padre</strong> / clave <strong>1234</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2 class="section-title">Contacto</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <strong>Dirección</strong>
+          <p class="meta">Panamá, Panamá Oeste, Chame, Cabuya</p>
+          
+          <strong>Correo</strong>
+          <p class="meta">info@escuela.edu.pa</p>
+          
+          <strong>Teléfono</strong>
+          <p class="meta">+507 6532-9015</p>
+          
+          <strong>WhatsApp</strong>
+          <p class="meta">
+            <a class="wa-link"
+               href="https://wa.me/50765329015?text=Hola,%20Necesito%20más%20información"
+               target="_blank" rel="noopener noreferrer">
+              <!-- Ícono WhatsApp inline (SVG) -->
+              <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#25D366"
+                      d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.49 5.78L0 24l6.41-1.68A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/>
+                <path fill="#fff"
+                      d="M17.52 14.3c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.71.88-.88 1.06-.17.18-.32.2-.6.07-.28-.13-1.15-.42-2.2-1.35-.81-.72-1.36-1.6-1.52-1.87-.16-.27-.02-.42.11-.55.12-.12.28-.32.4-.48.13-.16.18-.28.27-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.49-.86-2.05-.23-.55-.45-.48-.62-.49l-.52-.01c-.19 0-.49.07-.74.35-.25.27-.97.98-.97 2.38 0 1.4 1 2.76 1.15 2.95.14.19 1.99 3.01 4.81 4.23.67.29 1.19.45 1.59.58.66.21 1.27.18 1.76.12.54-.08 1.63-.66 1.86-1.31.23-.65.23-1.2.16-1.31-.07-.11-.25-.17-.52-.31z"/>
+              </svg>
+              <span>Escríbenos por WhatsApp</span>
+            </a>
+          </p>
+          
+        </div>
+      </div>
+    </section>
+    
+        <div class="card">
+          <strong>Horario de Atención</strong>
+          <p class="meta">Lunes a Viernes, 7:00 a.m. – 3:00 p.m.</p>
+          <strong>Redes</strong>
+          <p class="meta">@escuela_oficial</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> <span data-bind="nombre">Nombre de la Escuela</span> — Todos los derechos reservados.
+  </footer>
+</body>
+</html>

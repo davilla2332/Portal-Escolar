@@ -1,0 +1,173 @@
+/* ===== Estilos base y tema ===== */
+:root{
+  --bg: #f7fafc;
+  --card:#ffffff;
+  --muted:#64748b;
+  --text:#1f2937;
+  --brand:#3b82f6;
+  --brand2:#f59e0b;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(0,0,0,.10);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
+  color:var(--text);
+  background: radial-gradient(1200px 800px at 10% -10%,rgba(59,130,246,.12),transparent 60%),
+              radial-gradient(900px 600px at 110% 10%,rgba(245,158,11,.12),transparent 55%),
+              var(--bg);
+}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ===== Header/Nav ===== */
+header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.75);
+  border-bottom:1px solid rgba(0,0,0,.06);
+  backdrop-filter: saturate(140%) blur(8px);
+}
+.navbar{display:flex;align-items:center;gap:16px;padding:12px 0}
+.navbar .logo{display:flex;align-items:center;gap:10px}
+.navbar .logo img{width:44px;height:44px;border-radius:12px;box-shadow:var(--shadow)}
+.navbar .brand{display:flex;flex-direction:column}
+.navbar .brand strong{font-size:18px}
+.navbar .brand span{font-size:12px;color:var(--muted)}
+nav{margin-left:auto;display:flex;gap:10px;align-items:center}
+.nav-link{padding:8px 12px;border-radius:10px;background:transparent;border:1px solid transparent}
+.nav-link:hover,.nav-link[aria-current="page"]{background:rgba(59,130,246,.08);border-color:rgba(59,130,246,.18)}
+.menu-btn{display:none}
+@media (max-width:920px){
+  nav{display:none;position:absolute;left:0;right:0;top:64px;background:#ffffff;border-bottom:1px solid rgba(0,0,0,.06);padding:12px;flex-direction:column}
+  nav.open{display:flex}
+  .menu-btn{display:inline-flex;border:1px solid rgba(0,0,0,.08);padding:8px 12px;border-radius:10px;background:rgba(59,130,246,.08)}
+}
+
+/* ===== Hero ===== */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;padding:36px 0 16px}
+.hero-card{
+  background:linear-gradient(180deg,rgba(255,255,255,1),rgba(255,255,255,.92));
+  border:1px solid rgba(0,0,0,.06);
+  border-radius: var(--radius);
+  padding:28px; box-shadow: var(--shadow);
+}
+.hero h1{margin:.2em 0;font-size: clamp(26px, 2vw + 1rem, 44px)}
+.hero p{color:var(--muted);margin:6px 0 0;line-height:1.6}
+.hero .cta{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn{appearance:none;border:0;border-radius:12px;padding:10px 14px;background:rgba(59,130,246,.12);color:var(--text);cursor:pointer;transition:.2s transform,.2s background}
+.btn:hover{transform:translateY(-1px);background:rgba(59,130,246,.18)}
+.btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#ffffff;font-weight:700}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.25);font-size:12px;color:#1f2937}
+
+/* ===== Secciones ===== */
+section{padding:36px 0}
+.section-title{margin:0 0 12px;font-size: clamp(20px, 1vw + 1rem, 28px)}
+.grid{display:grid;gap:16px}
+.grid.cols-3{grid-template-columns: repeat(3,1fr)}
+.grid.cols-2{grid-template-columns: repeat(2,1fr)}
+
+/* 🔑 Cards */
+.card{
+  background:var(--card);
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:16px; 
+  padding:18px; 
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* 🔑 Solo para la tarjeta de Ubicación */
+.card.mapa {
+  aspect-ratio: 3 / 2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.card.mapa iframe {
+  width:100%;
+  height:100%;
+  border:0;
+  border-radius:12px;
+}
+
+/* 🔑 Ajuste especial para la tarjeta de Año de Fundación */
+.card.fundacion {
+  font-size: 1rem;   /* 🔽 Reduce tamaño de texto */
+  text-align:center; /* Centrado */
+  padding: 10px;      /* Menos espacio interno */
+  min-height: auto;  /* No fuerza altura grande */
+}
+
+
+.meta{color:var(--muted);font-size:13px}
+
+/* Acordeón */
+.accordion-item{border:1px solid rgba(0,0,0,.06);border-radius:14px;overflow:hidden;background:var(--card)}
+.acc-head{display:flex;justify-content:space-between;gap:10px;padding:14px 16px;cursor:pointer}
+.acc-body{display:none;padding:0 16px 16px;color:var(--muted)}
+.accordion-item.open .acc-body{display:block}
+
+/* Portal */
+.portal-grid{display:grid;grid-template-columns: repeat(2,1fr);gap:16px}
+.portal-card h4{margin:.2em 0}
+.input{width:100%;padding:10px 12px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#ffffff;color:var(--text)}
+.form-row{display:grid;gap:12px;margin:10px 0}
+.alert{padding:10px 12px;border-radius:12px;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.18)}
+.success{background:rgba(16,185,129,.18);border-color:rgba(16,185,129,.35)}
+
+/* Galería Vida Escolar */
+.gallery{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+.gallery figure{margin:0;border-radius:16px;overflow:hidden;background:var(--card);border:1px solid rgba(0,0,0,.06)}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.02) contrast(1.02)}
+.gallery .span-6{grid-column:span 6}
+.gallery .span-4{grid-column:span 4}
+.gallery .span-8{grid-column:span 8}
+
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr}
+  .grid.cols-3{grid-template-columns:1fr}
+  .grid.cols-2{grid-template-columns:1fr}
+  .portal-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(6,1fr)}
+  .gallery .span-6,.gallery .span-4,.gallery .span-8{grid-column:span 6}
+}
+
+footer{color:var(--muted);text-align:center;padding:28px 0;border-top:1px solid rgba(0,0,0,.06)}
+
+/* ===== Ajustes especiales para Año de Fundación ===== */
+.card.fundacion {
+  text-align: center;
+  padding: 14px;
+}
+
+/* Título "Año de Fundación" */
+.card.fundacion h3 {
+  font-size: 1rem;      /* tamaño del texto */
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Año (ejemplo: 1964) */
+.card.fundacion p {
+  font-size: 1.4rem;    /* 🔽 aquí ajustas el tamaño del número */
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 0;
+}
+.wa-link{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px; border-radius:12px;
+  background: rgba(37,211,102,.12);
+  border:1px solid rgba(37,211,102,.35);
+  text-decoration:none;
+}
+.wa-link:hover{ transform: translateY(-1px); background: rgba(37,211,102,.18); }
+.wa-icon{ width:18px; height:18px; display:inline-block; }
+
+
